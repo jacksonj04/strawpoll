@@ -1,0 +1,17 @@
+body {
+	padding-top: 60px;
+}
+
+#footer {
+	font-size: 0.8em;
+	color: #686868;
+}
+
+#candidatesList {
+	list-style: none;
+}
+
+#candidatesList li a {
+	border-left: solid 15px #FFF;
+	padding-left: 10px;
+}

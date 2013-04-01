@@ -1,0 +1,20 @@
+web1:
+  name: web
+  document_root: src/public
+  shared_writable_dirs:
+    - src/storage/views
+  php_version: 5.3.10
+  php_extensions:
+    - curl
+    - mcrypt
+    - mysql
+    - zip
+  php_date_timezone: "Europe/London"
+  after_build:
+    - "cd src; if [ ! -f composer.phar ]; then curl -s http://getcomposer.org/installer | php; fi; php composer.phar install"
+  before_deploy:
+    - "cd src; php artisan migrate"
+  
+db1:
+  name: data
+  type: mysql
